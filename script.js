@@ -6,5 +6,6 @@ function tampilkanData() {
   hasilDiv.innerHTML = `
     <p>Nama: ${nama}</p>
     <p>Email: ${email}</p>
+    
   `;
 }
