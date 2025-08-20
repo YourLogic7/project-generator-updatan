@@ -16,11 +16,28 @@ function tampilkanData() {
   const carring = document.getElementById('carring').value = "";
   const jam = document.getElementById('jam').value = "";
 
+  // buat reset form
+  document.getElementById("dsc").value = "";
+  document.getElementById('insera').value = "";
+  document.getElementById('headline').value = "";
+  document.getElementById('pelanggan').value = "";
+  document.getElementById('cp').value = "";
+  document.getElementById('layanan').value = "";
+  document.getElementById('resume').value = "";
+  document.getElementById('alamat').value = "";
+  document.getElementById('pengecekan').value= "";
+  document.getElementById('jabatan').value = "";
+  document.getElementById('respon').value = "";
+  document.getElementById('carring').value = "";
+  document.getElementById('jam').value = "";
+  
+  // menampilkan hasil ini mah
   const hasilDiv = document.getElementById('hasil');
 
+  
   // Menampilkan data yang diinputkan
   hasilDiv.innerHTML = `
-    <p>${dsc} + ${insera}</p>
+    <p>${dsc}${insera}</p>
     <p>${perner}</p>
     <p>Nama: ${headline}</p>
     <p>Email: ${pelanggan}</p>
