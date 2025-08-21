@@ -12,8 +12,6 @@ function tampilkanData() {
   const alamat = document.getElementById('alamat').value;
   const pengecekan = document.getElementById('pengecekan').value;
   const jabatan = document.getElementById('jabatan').value;
-  let pilihanNok = document.querySelector('input[name="nok"]:checked');
-  let pilihanOk = document.querySelector('input[name="ok"]:checked');
   const carring = document.getElementById('carring').value;
   const jam = document.getElementById('jam').value;
 
@@ -28,7 +26,6 @@ function tampilkanData() {
   document.getElementById('alamat').value = "";
   document.getElementById('pengecekan').value= "";
   document.getElementById('jabatan').value = "";
-  document.getElementById('respon').value = "";
   document.getElementById('carring').value = "";
   document.getElementById('jam').value = "";
 
