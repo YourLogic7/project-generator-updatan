@@ -15,6 +15,7 @@ function tampilkanData() {
   const carring = document.getElementById('carring').value;
   const jam = document.getElementById('jam').value;
 
+
   // buat reset form
   document.getElementById("dsc").value = "";
   document.getElementById('insera').value = "";
@@ -30,17 +31,9 @@ function tampilkanData() {
   document.getElementById('jam').value = "";
 
   // untuk menampilkan texbox sesuai pilihan radio button
-    function toggleTextbox() {
-      const pilihan = document.querySelector('input[name="pilihan"]:checked');
-      const textboxContainer = document.getElementById('textboxContainer');
+ 
 
-      if (pilihan && pilihan.value === 'opsi1') {
-        textboxContainer.classList.remove('hidden');
-      } else {
-        textboxContainer.classList.add('');
-      }
-    }
-
+  
   // menampilkan hasil ini mah
   const hasilDiv = document.getElementById('hasil');
 
