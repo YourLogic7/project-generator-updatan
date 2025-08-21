@@ -31,7 +31,19 @@ function tampilkanData() {
   document.getElementById('jam').value = "";
 
   // untuk menampilkan texbox sesuai pilihan radio button
- 
+  const radioButtons = document.querySelectorAll('input[name="pilihan"]');
+  const textboxContainerPilihan2 = document.getElementById('textbox-container-pilihan2');
+  const textboxPilihan2 = document.getElementById('textbox-pilihan2');
+
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.value === 'pilihan2') {
+        textboxContainerPilihan2.style.display = 'block';
+      } else {
+        textboxContainerPilihan2.style.display = 'none';
+      }
+    });
+  });
 
   
   // menampilkan hasil ini mah
