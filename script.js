@@ -29,6 +29,18 @@ function tampilkanData() {
   document.getElementById('carring').value = "";
   document.getElementById('jam').value = "";
 
+  // untuk menampilkan texbox sesuai pilihan radio button
+    function toggleTextbox() {
+      const pilihan = document.querySelector('input[name="pilihan"]:checked');
+      const textboxContainer = document.getElementById('textboxContainer');
+
+      if (pilihan && pilihan.value === 'opsi1') {
+        textboxContainer.classList.remove('hidden');
+      } else {
+        textboxContainer.classList.add('');
+      }
+    }
+
   // menampilkan hasil ini mah
   const hasilDiv = document.getElementById('hasil');
 

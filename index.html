@@ -41,10 +41,22 @@
         <label for="jabatan">Jabatan Solver:</label>
         <input type="text" id="jabatan" name="jabatan"><p style="font-size: 10px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p><br><br>
         
-        <label for="respon">Respon Solver:</label>
-        <input type="radio" id="nok" name="respon" value="nok"> belum ada informasi dari solver 
-        <input type="radio" id="ok" name="respon" value="ok"> sudah ada informasi dari solver<br><br>
-        <hr>
+        <!-- Pilihan Radio Button -->
+
+        <label>
+            <input type="radio" name="pilihan" value="opsi1" onchange="toggleTextbox()"> Opsi 1
+        </label><br>
+
+        <label>
+            <input type="radio" name="pilihan" value="opsi2" onchange="toggleTextbox()"> Opsi 2
+        </label><br>
+         <hr>
+
+         <!-- Kotak Teks Tambahan -->
+        <div id="textboxContainer" class="hidden">
+        <label for="teksTambahan">Teks Tambahan:</label>
+        <input type="text" id="teksTambahan">
+        </div>
 
         <label for="carring">Hasil Carring:</label>
         <input type="text" id="carring" name="carring"><br><br>
