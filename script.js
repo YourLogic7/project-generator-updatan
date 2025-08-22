@@ -14,7 +14,9 @@ function tampilkanData() {
   const jabatan = document.getElementById('jabatan').value;
   const carring = document.getElementById('carring').value;
   const jam = document.getElementById('jam').value;
-
+  const nok = document.getElementById('nok').value;
+  const textbox = document.getElementById("textboxSaya").value
+  const ok = document.getElementById('ok').value;
 
   // buat reset form
   document.getElementById("dsc").value = "";
@@ -29,22 +31,11 @@ function tampilkanData() {
   document.getElementById('jabatan').value = "";
   document.getElementById('carring').value = "";
   document.getElementById('jam').value = "";
+  document.getElementById("textboxSaya").value = "";
+  document.getElementById('ok').value = "";
 
-  // untuk menampilkan texbox sesuai pilihan radio button
-  const radioButtons = document.querySelectorAll('input[name="pilihan"]');
-  const textboxContainerPilihan2 = document.getElementById('textbox-container-pilihan2');
-  const textboxPilihan2 = document.getElementById('textbox-pilihan2');
-
-  radioButtons.forEach(radio => {
-    radio.addEventListener('change', function() {
-      if (this.value === 'pilihan2') {
-        textboxContainerPilihan2.style.display = 'block';
-      } else {
-        textboxContainerPilihan2.style.display = 'none';
-      }
-    });
-  });
-
+ 
+  
   
   // menampilkan hasil ini mah
   const hasilDiv = document.getElementById('hasil');
@@ -54,6 +45,17 @@ function tampilkanData() {
   hasilDiv.innerHTML = `
     <p>${dsc} ${insera}</p>
     <p>${perner} / C4 Area / ${jabatan} / Hasil Cek: ${pengecekan}</p>
-  
   `;
+}
+
+
+// untuk menampilkan texbox sesuai pilihan radio button
+function tampilkanTextbox() {
+    const textbox = document.getElementById("textboxSaya");
+    textbox.style.display = "block"; // Tampilkan textbox
+}
+
+function sembunyikanTextbox() {
+    const textbox = document.getElementById("textboxSaya");
+    textbox.style.display = "none"; // Sembunyikan textbox
 }
