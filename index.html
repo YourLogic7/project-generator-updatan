@@ -43,7 +43,7 @@
         <input type="text" id="pengecekan" name="pengecekan"><br><br>
 
         <label for="jabatan">Jabatan Solver:</label>
-        <input type="text" id="jabatan" name="jabatan"><p style="font-size: 10px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p><br><br>
+        <input type="text" id="jabatan" name="jabatan"><p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p><br><br>
         
         <hr>
         <!-- Pilihan Radio Button -->
@@ -74,7 +74,13 @@
 
         <label for="pesan">Sok Pencet Daks:</label>
         <button type="button" onclick="tampilkanData()">Sulap</button>
+        <br>
+        <br>
+        <button id="copy-dsc" onclick="myFunction()" style="display: none;">Salin teks</button>
+        <button id="copy-insera" onclick="myFunction()" style="display: none;">Salin teks</button>
         </form>
+
+        
 
         <div id="hasil-texbox" style="display: none;"></div>
         <div id="hasil-dsc"></div>
