@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
 // fungsi untuk menampilkan data
 function tampilkanData() {
   const perner = document.getElementById('perner').value;
