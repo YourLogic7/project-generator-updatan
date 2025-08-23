@@ -1,5 +1,29 @@
 let dataTersimpan = [];
 
+// untuk menampilkan texbox sesuai pilihan radio button
+document.addEventListener('DOMContentLoaded', function() {
+    //event listener untuk mendeteksi perubahan radio button
+    const radioBiasa = document.getElementById('radioBiasa');
+    const radioTextbox = document.getElementById('radioTextbox');
+    const textboxContainer = document.getElementById('textboxContainer');
+    
+    radioBiasa.addEventListener('change', function() {
+        if (this.checked) {
+            textboxContainer.style.display = 'none';
+        }
+    });
+
+    radioTextbox.addEventListener('change', function() {
+        if (this.checked) {
+            textboxContainer.style.display = 'block';
+        }
+    });
+});
+
+
+
+
+// fungsi untuk menampilkan data
 function tampilkanData() {
   const perner = document.getElementById('perner').value;
   const dsc = document.getElementById('dsc').value;
@@ -14,10 +38,11 @@ function tampilkanData() {
   const jabatan = document.getElementById('jabatan').value;
   const carring = document.getElementById('carring').value;
   const jam = document.getElementById('jam').value;
-  const nok = document.getElementById('nok').value;
-  const textbox = document.getElementById("textboxSaya").value
-  const ok = document.getElementById('ok').value;
+  const inputUser = document.getElementById('inputUser');
+  const radioBiasa = document.getElementById('radioBiasa');
+  const radioTextbox = document.getElementById('radioTextbox');
 
+  
   // buat reset form
   document.getElementById("dsc").value = "";
   document.getElementById('insera').value = "";
@@ -31,31 +56,51 @@ function tampilkanData() {
   document.getElementById('jabatan').value = "";
   document.getElementById('carring').value = "";
   document.getElementById('jam').value = "";
-  document.getElementById("textboxSaya").value = "";
-  document.getElementById('ok').value = "";
 
- 
-  
-  
+
   // menampilkan hasil ini mah
-  const hasilDiv = document.getElementById('hasil');
-
+  const hasilP = document.getElementById('hasil-texbox');
+  const hasilDiv = document.getElementById('hasil-dsc');
+  const hasilI = document.getElementById('hasil-insera');
   
-  // Menampilkan data yang diinputkan
-  hasilDiv.innerHTML = `
+  // untuk menampilkan data dari textbox jika radio button dipilih
+    if (radioBiasa.checked) {
+      hasilP.textContent = "Menunggu info lebih lanjut.";
+      } else if (radioTextbox.checked) {
+      if (inputUser.value.trim() === '') {
+          hasilP.textContent = "ISI INFORMASI SOLVERNYA!";
+      } else {
+          hasilP.textContent = `${inputUser.value}`;
+      }
+    };  
+
+  // Menampilkan data untuk update DSC
+ 
+   hasilDiv.innerHTML = `
     <p>${dsc} ${insera}</p>
     <p>${perner} / C4 Area / ${jabatan} / Hasil Cek: ${pengecekan}</p>
+    <p>Sudah dikordinasikan dengan ${jabatan} ${hasilP.textContent}</p>
+  `;
+
+  // Menampilkan data untuk update Insera
+
+  hasilI.innerHTML = `
+    <p>${headline}</p>
+    <p>Nama Pelanggan / CP: ${pelanggan} ${cp}</p>
+    <p>No. Tiket/ No Layanan: ${insera} ${insera} / ${layanan}</p>
+    <p>Resume Case: ${resume}</p>
+    <p>Alamat Instalasi: ${alamat}</p>
+    <p></p>
+    <p>Hasil Pengecekan:</p>
+    <p>-Cek: ${pengecekan}</p>
+    <p></p>
+    <p>Sudah dikordinasikan dengan ${jabatan} ${hasilP.textContent}</p>
+    <p></p>
+    <p>Hasil Carring: ${carring}</p>
+    <p>Jam Carring: ${jam}</p>
+    <p></p>
+    <p>Demikian informasinya</p>
+    <p>Terima kasih.</p>
   `;
 }
 
-
-// untuk menampilkan texbox sesuai pilihan radio button
-function tampilkanTextbox() {
-    const textbox = document.getElementById("textboxSaya");
-    textbox.style.display = "block"; // Tampilkan textbox
-}
-
-function sembunyikanTextbox() {
-    const textbox = document.getElementById("textboxSaya");
-    textbox.style.display = "none"; // Sembunyikan textbox
-}

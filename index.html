@@ -9,16 +9,16 @@
     <h1>Generator Updatan</h1>
         <form id="myForm">
         <label for="perner">Perner loe:</label>
-        <input type="text" id="perner" name="perner"><hr><br><br>
+        <input type="text" id="perner" name="perner"><hr><br>
 
+        <label for="headline">Headline Tiket:</label>
+        <input type="text" id="headline" name="headline"><br><br>
+        
         <label for="dsc">Tiket DSC:</label>
         <input type="text" id="dsc" name="dsc"><br><br>
 
         <label for="insera">Tiket INSERA:</label>
         <input type="text" id="insera" name="insera"><br><br>
-
-        <label for="headline">Headline Tiket:</label>
-        <input type="text" id="headline" name="headline"><br><br>
 
         <label for="pelanggan">Nama Pelanggan:</label>
         <input type="text" id="pelanggan" name="pelanggan"><br><br>
@@ -43,19 +43,22 @@
         
         <hr>
         <!-- Pilihan Radio Button -->
-        <label>
-            <input type="radio" id="nok" name="pilihan" value="no" onchange="sembunyikanTextbox()"> No Respon
-        </label>
+        <div>
+            <h4>Info Update Solver:</h4>
+            <input type="radio" id="radioBiasa" name="pilihan" value="radioBiasa" checked>
+            <label for="radioBiasa">No Respon</label>
+        </div>
+
+        <div>
+            <input type="radio" id="radioTextbox" name="pilihan" value="radioTextbox">
+            <label for="radioTextbox">Respon</label>
+        </div>
         <br>
-        <label>
-            <input type="radio" id="ok" name="pilihan" value="ok" checked onchange="tampilkanTextbox()"> Respon
-        </label>
-        <br><br>
 
         <!-- Kotak Teks Tambahan -->
-       <div id="containerTextbox">
-            <label for="textboxSaya">Info Solver:</label>
-            <input type="text" id="textboxSaya" name="teks" style="display: none;"> <!-- Mulai dengan tersembunyi -->
+        <div id="textboxContainer" style="display: none;">
+            <label for="inputUser">Info Solver:</label>
+            <input type="text" id="inputUser" name="inputUser">
         </div>
          <hr>
 
@@ -69,7 +72,10 @@
         <button type="button" onclick="tampilkanData()">Sulap</button>
         </form>
 
-        <div id="hasil"></div>
+        <div id="hasil-texbox" style="display: none;"></div>
+        <div id="hasil-dsc"></div>
+        <div id="hasil-insera"></div>
+       
 
   <script src="script.js"></script>
 </body>
