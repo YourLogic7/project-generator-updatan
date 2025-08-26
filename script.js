@@ -20,6 +20,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// membuat fungsi untuk menyimpan data
+const generatorButton = document.getElementById('generator-updatan');
+const copyAll = document.getElementById('copy-all');
+
+function copyTextToClipboard() {
+  const hasilDiv = document.getElementById('hasil-dsc');
+  const hasilI = document.getElementById('hasil-insera');
+  // Gabungkan hasil dari kedua elemen
+  const textToCopy = `${hasilDiv.innerText}\n\n${hasilI.innerText}`;
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      alert('Teks berhasil disalin ke clipboard!');
+    })
+    .catch(err => {
+      alert('Gagal menyalin teks.');
+    });
+}
+
+copyAll.addEventListener('click', copyTextToClipboard);
+
+// fungsi untuk menampilkan tombol salin setelah tombol generator diklik
+generatorButton.addEventListener('click', function() {
+  copyAll.style.display = 'block';
+});
+
+// opsi: sembunyikan tombol salin saat halaman di click
+copyAll.addEventListener('click', function() {
+  copyAll.style.display = 'none';
+});
+
 
 // fungsi untuk menampilkan data
 function tampilkanData() {
@@ -100,5 +130,4 @@ function tampilkanData() {
     <p>Demikian informasinya</p>
     <p>Terima kasih.</p>
   `;
-}
-
+};
