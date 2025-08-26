@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // membuat fungsi untuk menyimpan data
 const generatorButton = document.getElementById('generator-updatan');
-const copyAll = document.getElementById('copy-all');
+const copyAll = document.getElementById('copyAll');
 
 function copyTextToClipboard() {
   const hasilDiv = document.getElementById('hasil-dsc');
