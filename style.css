@@ -12,85 +12,39 @@ body{
     width: 300px;
     padding: 8px;
     margin-bottom: 10px;
+    margin-left: 5px;
     border-radius: 4px;
     background-color: #2c2a2a;
     color: white;
 }
-#layanan {
-    display: inline-table;
-    margin-left: 350px;
+
+#headline-layanan {
+    display: flex;
     
+
 }
 
-label[for="layanan"] {
+#tiket-data {
     display: flex;
-    margin-left: 354px;
-    margin-top: -69px;
-}
-
-#pelanggan, #cp {
-    display: inline-table;
-    margin-left: 350px;
+    
 
 }
 
-#cp {
-    margin-top: -5px;
-}
-
-label[for="pelanggan"] {
+#resume-report {
     display: flex;
-    margin-left: 354px;
-    margin-top: -153px;
+    
 
 }
 
-#alamat {
-    display: inline-table;
-    margin-left: 350px;
-
-}
-
-label[for="alamat"] {
+#pengecekan-jabatan {
     display: flex;
-    margin-left: 354px;
-    margin-top: -108px;
-}
-
-#pengecekan {
-    display: inline-table;
-    margin-left: 350px;
+    
 
 }
 
-label[for="pengecekan"] {
+#carring-jam{
     display: flex;
-    margin-left: 354px;
-    margin-top: -15px;  
-   }
-
-#jabatan {
-    display: inline-table;
-}
-
-label[for="jabatan"] {
-    display: flex;
-    margin-top: -88px;  
-   }
-
-#via-grup {
-    display: flex;
-}
-
-#jam {
-    display: inline-table;
-    margin-left: 354px;
-}
-
-label[for="jam"] {
-    display: flex;
-    margin-left: 354px;
-    margin-top: -107px;
+    
 }
 
 #inputUser{

@@ -15,38 +15,59 @@
         <label for="perner">Perner loe:</label>
         <input type="text" id="perner" name="perner"><hr><br>
 
-        <label for="headline">Headline Tiket:</label>
-        <input type="text" id="headline" name="headline">
-        <label for="layanan">No Layanan:</label>
-        <input type="text" id="layanan" name="layanan"><br><br>
+    <section id="headline-layanan">
+        <div>
+            <label for="headline">Headline Tiket:</label>
+            <input type="text" id="headline" name="headline">
+        </div>
+        <div>
+            <label for="layanan">No Layanan:</label>
+            <input type="text" id="layanan" name="layanan"><br>
+        </div>
+    </section>
 
-        <label for="dsc">Tiket DSC / Tiket INSERA:</label>
-        <input type="text" id="dsc" name="dsc">
+    <section id="tiket-data">
+        <div id="tiket">
+            <label for="dsc">Tiket DSC / Tiket INSERA:</label>
+            <input type="text" id="dsc" name="dsc">
 
-        <label for="insera"></label>
-        <input type="text" id="insera" name="insera"><br><br>
+            <label for="insera"></label>
+            <input type="text" id="insera" name="insera"><br><br>
+        </div>
 
+        <div id="data">
         <label for="pelanggan">Nama Pelanggan / No CP:</label>
-        <input type="text" id="pelanggan" name="pelanggan">
-        <label for="cp"></label>
-        <input type="text" id="cp" name="cp"><br><br>
-
-        <hr>
+            <input type="text" id="pelanggan" name="pelanggan">
+            <label for="cp"></label>
+            <input type="text" id="cp" name="cp"><br><br>
+        
+        </div>
+    </section>
+    <hr>
+    <section id="resume-report">
+        <div>
         <label for="resume">Resume Case:</label>
         <input type="text" id="resume" name="resume"><br><br>
-        
+        </div>
+        <div>
         <label for="alamat">Report Date:</label>
         <input type="text" id="alamat" name="alamat"><br><br>
-
-        <label for="pengecekan">Hasil Pengecekan:</label>
-        <input type="text" id="pengecekan" name="pengecekan"><br><br>
-
-        <label for="jabatan">Jabatan Solver:</label>
-        <input type="text" id="jabatan" name="jabatan">
+        </div>
+    </section>
+    <section id="pengecekan-jabatan">
+        <div>
+            <label for="pengecekan">Hasil Pengecekan:</label>
+            <input type="text" id="pengecekan" name="pengecekan"><br><br>
+        </div>
+        <div>
+            <label for="jabatan">Jabatan Solver:</label>
+            <input type="text" id="jabatan" name="jabatan">
+            <p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p>
+        </div>
+    </section> 
+    <section>
         <input type="radio" id="via-grup" name="grup" value="via-grup"> 
         <label for="grup">Via grup:</label><br>
-        <p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p>
-
         <hr>
         <!-- Pilihan Radio Button -->
         <div>
@@ -65,20 +86,25 @@
             <label for="radioTextbox">Respon</label>
         </div>
         <br>
-
+    
         <!-- Kotak Teks Tambahan -->
         <div id="textboxContainer" style="display: none;">
             <label for="inputUser">Info Solver:</label>
             <input type="text" id="inputUser" name="inputUser">
         </div>
-         <hr>
-
-        <label for="carring">Hasil Carring:</label>
-        <input type="text" id="carring" name="carring"><br><br>
-
-        <label for="jam">Jam Carring:</label>
-        <input type="text" id="jam" name="jam"><br><br>
-
+    </section>
+    <hr>
+    <section id="carring-jam">
+        <div>
+            <label for="carring">Hasil Carring:</label>
+            <input type="text" id="carring" name="carring"><br><br>
+        </div>
+        <div>
+            <label for="jam">Jam Carring:</label>
+            <input type="text" id="jam" name="jam"><br><br>
+        </div>
+    </section>
+    
         <!-- tombol hasil braddder -->
         <label for="pesan">Sok Pencet Daks:</label>
         <button type="button" id="generator-updatan" onclick="tampilkanData()">Sulap</button>
