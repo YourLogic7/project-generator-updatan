@@ -3,11 +3,18 @@ let dataTersimpan = [];
 // untuk menampilkan texbox sesuai pilihan radio button
 document.addEventListener('DOMContentLoaded', function() {
     //event listener untuk mendeteksi perubahan radio button
+    const tanpaKordinasi = document.getElementById('tanpa-kordinasi')
     const radioBiasa = document.getElementById('radioBiasa');
     const radioTextbox = document.getElementById('radioTextbox');
     const textboxContainer = document.getElementById('textboxContainer');
     
     radioBiasa.addEventListener('change', function() {
+        if (this.checked) {
+            textboxContainer.style.display = 'none';
+        }
+    });
+    
+    tanpaKordinasi.addEventListener('change', function() {
         if (this.checked) {
             textboxContainer.style.display = 'none';
         }
@@ -25,10 +32,17 @@ const generatorButton = document.getElementById('generator-updatan');
 const copyAll = document.getElementById('copyAll');
 
 function copyTextToClipboard() {
-  const hasilDiv = document.getElementById('hasil-dsc');
-  const hasilI = document.getElementById('hasil-insera');
-  // Gabungkan hasil dari kedua elemen
-  const textToCopy = `${hasilDiv.innerText}\n\n${hasilI.innerText}`;
+  // Only copy the output of the element that is currently displayed (display: block)
+  const hasilAkhirKordinasi = document.getElementById('hasil-akhir-kordinasi');
+  const hasilAkhirTanpaKordinasi = document.getElementById('hasil-akhir-tanpa-kordinasi');
+  let textToCopy = '';
+
+  if (hasilAkhirKordinasi.style.display === 'block') {
+    textToCopy = hasilAkhirKordinasi.innerText;
+  } else if (hasilAkhirTanpaKordinasi.style.display === 'block') {
+    textToCopy = hasilAkhirTanpaKordinasi.innerText;
+  }
+
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
       alert('Teks berhasil disalin ke clipboard!');
@@ -36,7 +50,7 @@ function copyTextToClipboard() {
     .catch(err => {
       alert('Gagal menyalin teks.');
     });
-}
+};
 
 copyAll.addEventListener('click', copyTextToClipboard);
 
@@ -49,6 +63,7 @@ generatorButton.addEventListener('click', function() {
 copyAll.addEventListener('click', function() {
   copyAll.style.display = 'none';
 });
+
 
 
 // fungsi untuk menampilkan data
@@ -69,8 +84,11 @@ function tampilkanData() {
   const inputUser = document.getElementById('inputUser');
   const radioBiasa = document.getElementById('radioBiasa');
   const radioTextbox = document.getElementById('radioTextbox');
+  const tanpaKordinasi = document.getElementById('tanpa-kordinasi')
+  const hasilAkhirKordinasi = document.getElementById('hasil-akhir-kordinasi');
+  const hasilAkhirTanpaKordinasi = document.getElementById('hasil-akhir-tanpa-kordinasi');
 
-  
+
   // buat reset form
   document.getElementById("dsc").value = "";
   document.getElementById('insera').value = "";
@@ -84,30 +102,45 @@ function tampilkanData() {
   document.getElementById('jabatan').value = "";
   document.getElementById('carring').value = "";
   document.getElementById('jam').value = "";
-
+  document.getElementById('via-grup').value = "";
 
   // menampilkan hasil ini mah
   const hasilP = document.getElementById('hasil-texbox');
   const hasilDiv = document.getElementById('hasil-dsc');
   const hasilI = document.getElementById('hasil-insera');
-  
+  const hasiltankorDsc = document.getElementById('hasil-tanpa-kordinasi-dsc');
+  const hasiltankorInsera = document.getElementById('hasil-tanpa-kordinasi-insera');
+
+  // nambahin via grup jika di ceklist
+  const grup = document.getElementById('via-grup');
+
   // untuk menampilkan data dari textbox jika radio button dipilih
     if (radioBiasa.checked) {
       hasilP.textContent = "Menunggu info lebih lanjut.";
+      } else if (tanpaKordinasi.checked) {
+      hasilP.textContent = "Tanpa Kordinasi"
       } else if (radioTextbox.checked) {
-      if (inputUser.value.trim() === '') {
-          hasilP.textContent = "ISI INFORMASI SOLVERNYA!";
-      } else {
-          hasilP.textContent = `${inputUser.value}`;
-      }
+        if (inputUser.value.trim() === '') {
+            hasilP.textContent = "ISI INFORMASI SOLVERNYA!";
+        } else {
+            hasilP.textContent = `${inputUser.value}`;
+        }
     };  
+
+    // memunculkan via grup nya
+    if (grup.checked) {
+      grup.textContent = "Via grup,"
+    } else {
+      grup.textContent= ""
+    };
 
   // Menampilkan data untuk update DSC
  
    hasilDiv.innerHTML = `
     <p>${dsc} ${insera}</p>
     <p>${perner} / C4 Area / ${jabatan} / Hasil Cek: ${pengecekan}</p>
-    <p>Sudah dikordinasikan dengan ${jabatan} ${hasilP.textContent}</p>
+    <p>Sudah dikordinasikan dengan ${jabatan} ${grup.textContent} ${hasilP.textContent}</p>
+    <p>=====================================</p>
   `;
 
   // Menampilkan data untuk update Insera
@@ -115,14 +148,14 @@ function tampilkanData() {
   hasilI.innerHTML = `
     <p>${headline}</p>
     <p>Nama Pelanggan / CP: ${pelanggan} ${cp}</p>
-    <p>No. Tiket/ No Layanan: ${insera} ${insera} / ${layanan}</p>
+    <p>No. Tiket/ No Layanan: ${insera} ${dsc} / ${layanan}</p>
     <p>Resume Case: ${resume}</p>
     <p>Alamat Instalasi: ${alamat}</p>
     <p></p>
     <p>Hasil Pengecekan:</p>
     <p>-Cek: ${pengecekan}</p>
-    <p></p>
-    <p>Sudah dikordinasikan dengan ${jabatan} ${hasilP.textContent}</p>
+    <p>Hasil Kordinasi</p>
+    <p>Sudah dikordinasikan dengan ${jabatan} ${grup.textContent} ${hasilP.textContent}</p>
     <p></p>
     <p>Hasil Carring: ${carring}</p>
     <p>Jam Carring: ${jam}</p>
@@ -130,4 +163,38 @@ function tampilkanData() {
     <p>Demikian informasinya</p>
     <p>Terima kasih.</p>
   `;
+
+  hasiltankorDsc.innerHTML= `
+    <p>${dsc} ${insera}</p>
+    <p>${perner} / C4 Area / ${hasilP.textContent} / Hasil Cek: ${pengecekan}</p>
+    <p>${carring}</p>
+    <p>=====================================</p>
+  `;
+
+  hasiltankorInsera.innerHTML= `
+    <p>${headline}</p>
+    <p>Nama Pelanggan / CP: ${pelanggan} ${cp}</p>
+    <p>No. Tiket/ No Layanan: ${insera} ${dsc} / ${layanan}</p>
+    <p>Resume Case: ${resume}</p>
+    <p>Alamat Instalasi: ${alamat}</p>
+    <p>Hasil Pengecekan:</p>
+    <p>-Cek: ${pengecekan}</p>
+    <p>Hasil Kordinasi:</p>
+    <p>- ${hasilP.textContent},  ${pengecekan}</p>
+    <p>Hasil Carring: ${carring}</p>
+    <p>Jam Carring: ${jam}</p>
+    <p> </p>
+    <p>Demikian informasinya</p>
+    <p>Terima kasih.</p>
+  `;
+
+// event untuk memunculkan hasil sesuai kordinasi/tanpa kordinasi
+if (tanpaKordinasi.checked) {
+  hasilAkhirTanpaKordinasi.style.display = 'block';
+  hasilAkhirKordinasi.style.display = 'none';
+} else {
+  hasilAkhirTanpaKordinasi.style.display = 'none';
+  hasilAkhirKordinasi.style.display = 'block';
+}
+
 };

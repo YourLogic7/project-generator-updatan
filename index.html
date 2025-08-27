@@ -43,13 +43,21 @@
         <input type="text" id="pengecekan" name="pengecekan"><br><br>
 
         <label for="jabatan">Jabatan Solver:</label>
-        <input type="text" id="jabatan" name="jabatan"><p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p><br><br>
-        
+        <input type="text" id="jabatan" name="jabatan">
+        <input type="radio" id="via-grup" name="grup" value="via-grup"> 
+        <label for="grup">Via grup:</label><br>
+        <p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p>
+
         <hr>
         <!-- Pilihan Radio Button -->
         <div>
             <h4>Info Update Solver:</h4>
-            <input type="radio" id="radioBiasa" name="pilihan" value="radioBiasa" checked>
+            <input type="radio" id="tanpa-kordinasi" name="pilihan" value="tanpa-kordinasi" checked>
+            <label for="tanpa-kordinasi">Tanpa Kordinasi</label>
+        </div>
+
+        <div>
+            <input type="radio" id="radioBiasa" name="pilihan" value="radioBiasa" >
             <label for="radioBiasa">No Respon</label>
         </div>
 
@@ -72,18 +80,26 @@
         <label for="jam">Jam Carring:</label>
         <input type="text" id="jam" name="jam"><br><br>
 
+        <!-- tombol hasil braddder -->
         <label for="pesan">Sok Pencet Daks:</label>
         <button type="button" id="generator-updatan" onclick="tampilkanData()">Sulap</button>
+
+        <!-- untuk copy text -->
         <button id="copyAll" onclick="myFunction()" style="display: none;" clicked>Salin Teks :)</button>
         </form>
 
-        
-        <labeL for="hasil-akhir" id="label-hasil-akhir">
-            <div id="hasil-texbox" style="display: none;"></div>
+        <div id="hasil-texbox" style="display: none;"></div>
+        <span for="hasil-akhir" id="hasil-akhir-kordinasi" style="display: none;">
             <div id="hasil-dsc"></div>
             <div id="hasil-insera"></div>
-       </labeL>
+        </span>
+
+        <span for="hasil-akhir" id="hasil-akhir-tanpa-kordinasi" style="display: none;">
+            <div id="hasil-tanpa-kordinasi-dsc"></div>
+            <div id="hasil-tanpa-kordinasi-insera"></div>
+        </span>
 
   <script src="script.js"></script>
 </body>
+<footer> </footer>
 </html>

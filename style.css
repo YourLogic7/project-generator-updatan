@@ -30,10 +30,17 @@ label {
     margin-bottom: 5px;
 }
 
-label[for="radioTextbox"], label[for="radioBiasa"] {
+label[for="radioTextbox"], label[for="radioBiasa"], label[for="tanpa-kordinasi"] {
     display: inline;
     margin-top: 10px;
 }
+
+label[for="grup"] {
+    display: inline;
+    margin-top: 10px;
+}
+
+
 
 button {
     font-family: 'Pixelify Sans', sans-serif;
