@@ -167,7 +167,7 @@ function tampilkanData() {
   hasiltankorDsc.innerHTML= `
     <p>${insera} ${dsc}</p>
     <p>${perner} / C4 Area / Tanpa kordinasi,${hasilP.textContent} / Hasil Cek: ${pengecekan}</p>
-    <p>${carring}</p>
+    <p>${carring}<br>${jam}</p>
     <p>=====================================</p>
   `;
 

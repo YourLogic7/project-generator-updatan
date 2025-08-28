@@ -57,12 +57,12 @@
     <section id="pengecekan-jabatan">
         <div>
             <label for="pengecekan">Hasil Pengecekan:</label>
-            <input type="text" id="pengecekan" name="pengecekan" placeholder="contoh: cek DSC permintaan PI dll."><br><br>
+            <textarea id="pengecekan" name="pengecekan" placeholder="contoh: cek DSC permintaan PI dll." rows="6" cols="50"></textarea><br><br>
         </div>
         <div>
             <label for="jabatan">Jabatan Solver:</label>
             <input type="text" id="jabatan" name="jabatan" placeholder="kalo gak kordinasi gausah di isi yaaa...">
-            <p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst. <br>(Kosongkan jika tidak kordinasi)</p>
+            <p style="font-size: 15px; color: red;" id="tulisan">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst. <br>(Kosongkan jika tidak kordinasi)</p>
         </div>
     </section> 
     <section>
@@ -92,7 +92,7 @@
         <!-- Kotak Teks Tambahan -->
         <div id="textboxContainer" style="display: none;">
             <label for="inputUser">Info Tambahan:</label>
-            <input type="text" id="inputUser" name="inputUser" placeholder="isi dengan info tambahan misal: info solver atau info tanpa kordinasinya kenapa">
+            <textarea id="inputUser" name="inputUser" placeholder="isi dengan info tambahan misal: info solver atau info tanpa kordinasinya kenapa" rows="4" cols="50"></textarea>
         </div>
     </section>
     <hr>
