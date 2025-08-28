@@ -137,7 +137,7 @@ function tampilkanData() {
   // Menampilkan data untuk update DSC
  
    hasilDiv.innerHTML = `
-    <p>${dsc} ${insera}</p>
+    <p>${insera} ${dsc}</p>
     ${perner} / C4 Area / ${jabatan} / Hasil Cek: ${pengecekan}<br>
     Sudah dikordinasikan dengan ${jabatan} ${grup.textContent} ${hasilP.textContent}
     <p>=====================================</p>
@@ -165,7 +165,7 @@ function tampilkanData() {
   `;
 
   hasiltankorDsc.innerHTML= `
-    <p>${dsc} ${insera}</p>
+    <p>${insera} ${dsc}</p>
     <p>${perner} / C4 Area / Tanpa kordinasi,${hasilP.textContent} / Hasil Cek: ${pengecekan}</p>
     <p>${carring}</p>
     <p>=====================================</p>
