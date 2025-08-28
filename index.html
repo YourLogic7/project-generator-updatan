@@ -13,33 +13,33 @@
     <h1 id="judul-di-luhur">Generator Updatan</h1>
         <form id="myForm">
         <label for="perner">Perner loe:</label>
-        <input type="text" id="perner" name="perner"><hr><br>
+        <input type="text" id="perner" name="perner" placeholder="isi perner loe..."><hr><br>
 
     <section id="headline-layanan">
         <div>
             <label for="headline">Headline Tiket:</label>
-            <input type="text" id="headline" name="headline">
+            <input type="text" id="headline" name="headline" placeholder="Isi headline coy...">
         </div>
         <div>
             <label for="layanan">No Layanan:</label>
-            <input type="text" id="layanan" name="layanan"><br>
+            <input type="text" id="layanan" name="layanan" placeholder="contoh: 11234224543"><br>
         </div>
     </section>
 
     <section id="tiket-data">
         <div id="tiket">
             <label for="dsc">Tiket DSC / Tiket INSERA:</label>
-            <input type="text" id="dsc" name="dsc">
+            <input type="text" id="dsc" name="dsc" placeholder="contoh: 1-MPX1P09">
 
             <label for="insera"></label>
-            <input type="text" id="insera" name="insera"><br><br>
+            <input type="text" id="insera" name="insera" placeholder="contoh: INC52312445"><br><br>
         </div>
 
         <div id="data">
         <label for="pelanggan">Nama Pelanggan / No CP:</label>
-            <input type="text" id="pelanggan" name="pelanggan">
+            <input type="text" id="pelanggan" name="pelanggan" placeholder="Contoh: Rijal Indra Kurnaedi">
             <label for="cp"></label>
-            <input type="text" id="cp" name="cp"><br><br>
+            <input type="text" id="cp" name="cp" placeholder="contoh: 082xxxxxxxxx"><br><br>
         
         </div>
     </section>
@@ -47,22 +47,22 @@
     <section id="resume-report">
         <div>
         <label for="resume">Resume Case:</label>
-        <input type="text" id="resume" name="resume"><br><br>
+        <input type="text" id="resume" name="resume"placeholder="Isi resume case nya coy.."><br><br>
         </div>
         <div>
         <label for="alamat">Report Date:</label>
-        <input type="text" id="alamat" name="alamat"><br><br>
+        <input type="text" id="alamat" name="alamat" placeholder="contoh: Jl. in aja dlu jaksel"><br><br>
         </div>
     </section>
     <section id="pengecekan-jabatan">
         <div>
             <label for="pengecekan">Hasil Pengecekan:</label>
-            <input type="text" id="pengecekan" name="pengecekan"><br><br>
+            <input type="text" id="pengecekan" name="pengecekan" placeholder="contoh: cek DSC permintaan PI dll."><br><br>
         </div>
         <div>
             <label for="jabatan">Jabatan Solver:</label>
-            <input type="text" id="jabatan" name="jabatan">
-            <p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst.</p>
+            <input type="text" id="jabatan" name="jabatan" placeholder="kalo gak kordinasi gausah di isi yaaa...">
+            <p style="font-size: 15px; color: red;">*contoh: TIFF HD DISTRICT JAKSEL, HSA JAKSEL, Korlap JAKSEL, dst. <br>(Kosongkan jika tidak kordinasi)</p>
         </div>
     </section> 
     <section>
@@ -70,14 +70,11 @@
         <label for="grup">Via grup:</label><br>
         <hr>
         <!-- Pilihan Radio Button -->
-        <div>
-            <h4>Info Update Solver:</h4>
-            <input type="radio" id="tanpa-kordinasi" name="pilihan" value="tanpa-kordinasi" checked>
-            <label for="tanpa-kordinasi">Tanpa Kordinasi</label>
-        </div>
+
 
         <div>
-            <input type="radio" id="radioBiasa" name="pilihan" value="radioBiasa" >
+            <h4>Info Update Solver:</h4>
+            <input type="radio" id="radioBiasa" name="pilihan" value="radioBiasa" checked>
             <label for="radioBiasa">No Respon</label>
         </div>
 
@@ -85,23 +82,28 @@
             <input type="radio" id="radioTextbox" name="pilihan" value="radioTextbox">
             <label for="radioTextbox">Respon</label>
         </div>
+
+        <div>
+            <input type="radio" id="tanpa-kordinasi" name="pilihan" value="tanpa-kordinasi" >
+            <label for="tanpa-kordinasi">Tanpa Kordinasi</label>
+        </div>
         <br>
     
         <!-- Kotak Teks Tambahan -->
         <div id="textboxContainer" style="display: none;">
-            <label for="inputUser">Info Solver:</label>
-            <input type="text" id="inputUser" name="inputUser">
+            <label for="inputUser">Info Tambahan:</label>
+            <input type="text" id="inputUser" name="inputUser" placeholder="isi dengan info tambahan misal: info solver atau info tanpa kordinasinya kenapa">
         </div>
     </section>
     <hr>
     <section id="carring-jam">
         <div>
             <label for="carring">Hasil Carring:</label>
-            <input type="text" id="carring" name="carring"><br><br>
+            <input type="text" id="carring" name="carring" placeholder="contoh: RNA 3x atau terhubung dengan pelanggan, acc close"><br><br>
         </div>
         <div>
             <label for="jam">Jam Carring:</label>
-            <input type="text" id="jam" name="jam"><br><br>
+            <input type="text" id="jam" name="jam" placeholder="isi jam Carring nya yaa kakak.."><br><br>
         </div>
     </section>
     

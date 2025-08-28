@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     tanpaKordinasi.addEventListener('change', function() {
         if (this.checked) {
-            textboxContainer.style.display = 'none';
+            textboxContainer.style.display = 'block';
         }
     });
 
@@ -118,10 +118,10 @@ function tampilkanData() {
     if (radioBiasa.checked) {
       hasilP.textContent = "Menunggu info lebih lanjut.";
       } else if (tanpaKordinasi.checked) {
-      hasilP.textContent = "Tanpa Kordinasi"
+      hasilP.textContent = `${inputUser.value}`;
       } else if (radioTextbox.checked) {
         if (inputUser.value.trim() === '') {
-            hasilP.textContent = "ISI INFORMASI SOLVERNYA!";
+            hasilP.textContent = "ISI INFORMASI TAMBAHANNYAA WOYY!";
         } else {
             hasilP.textContent = `${inputUser.value}`;
         }
@@ -138,8 +138,8 @@ function tampilkanData() {
  
    hasilDiv.innerHTML = `
     <p>${dsc} ${insera}</p>
-    <p>${perner} / C4 Area / ${jabatan} / Hasil Cek: ${pengecekan}</p>
-    <p>Sudah dikordinasikan dengan ${jabatan} ${grup.textContent} ${hasilP.textContent}</p>
+    ${perner} / C4 Area / ${jabatan} / Hasil Cek: ${pengecekan}<br>
+    Sudah dikordinasikan dengan ${jabatan} ${grup.textContent} ${hasilP.textContent}
     <p>=====================================</p>
   `;
 
@@ -147,45 +147,48 @@ function tampilkanData() {
 
   hasilI.innerHTML = `
     <p>${headline}</p>
-    <p>Nama Pelanggan / CP: ${pelanggan} ${cp}</p>
-    <p>No. Tiket/ No Layanan: ${insera} ${dsc} / ${layanan}</p>
-    <p>Resume Case: ${resume}</p>
-    <p>Alamat Instalasi: ${alamat}</p>
+    Nama Pelanggan / CP: ${pelanggan} ${cp}<br>
+    No. Tiket/ No Layanan: ${insera} ${dsc} / ${layanan}<br>
+    Resume Case: ${resume}<br>
+    Report Date: ${alamat}<br>
     <p></p>
-    <p>Hasil Pengecekan:</p>
-    <p>-Cek: ${pengecekan}</p>
-    <p>Hasil Kordinasi</p>
-    <p>Sudah dikordinasikan dengan ${jabatan} ${grup.textContent} ${hasilP.textContent}</p>
+    Hasil Pengecekan:<br>
+    -Cek: ${pengecekan}<br>
+    Hasil Kordinasi:<br>
+    Sudah dikordinasikan dengan ${jabatan} ${grup.textContent} ${hasilP.textContent}</p>
     <p></p>
-    <p>Hasil Carring: ${carring}</p>
-    <p>Jam Carring: ${jam}</p>
+    Hasil Carring: ${carring}<br>
+    Jam Carring: ${jam}<br>
     <p></p>
-    <p>Demikian informasinya</p>
-    <p>Terima kasih.</p>
+    Demikian informasinya<br>
+    Terima kasih.
   `;
 
   hasiltankorDsc.innerHTML= `
     <p>${dsc} ${insera}</p>
-    <p>${perner} / C4 Area / ${hasilP.textContent} / Hasil Cek: ${pengecekan}</p>
+    <p>${perner} / C4 Area / Tanpa kordinasi,${hasilP.textContent} / Hasil Cek: ${pengecekan}</p>
     <p>${carring}</p>
     <p>=====================================</p>
   `;
 
   hasiltankorInsera.innerHTML= `
     <p>${headline}</p>
-    <p>Nama Pelanggan / CP: ${pelanggan} ${cp}</p>
-    <p>No. Tiket/ No Layanan: ${insera} ${dsc} / ${layanan}</p>
-    <p>Resume Case: ${resume}</p>
-    <p>Alamat Instalasi: ${alamat}</p>
-    <p>Hasil Pengecekan:</p>
-    <p>-Cek: ${pengecekan}</p>
-    <p>Hasil Kordinasi:</p>
-    <p>- ${hasilP.textContent},  ${pengecekan}</p>
-    <p>Hasil Carring: ${carring}</p>
-    <p>Jam Carring: ${jam}</p>
+    Nama Pelanggan / CP: ${pelanggan} ${cp}<br>
+    No. Tiket/ No Layanan: ${insera} ${dsc} / ${layanan}<br>
+    Resume Case: ${resume}<br>
+    Report Date: ${alamat}<br>
+    <p></p>
+    Hasil Pengecekan:<br>
+    -Cek: ${pengecekan}<br>
+    <p></p>
+    Hasil Kordinasi:<br>
+    - Tanpa kordinasi,  ${hasilP.textContent}<br>
+    <p></p>
+    Hasil Carring: ${carring}<br>
+    Jam Carring: ${jam}<br>
     <p> </p>
-    <p>Demikian informasinya</p>
-    <p>Terima kasih.</p>
+    Demikian informasinya<br>
+    Terima kasih.
   `;
 
 // event untuk memunculkan hasil sesuai kordinasi/tanpa kordinasi
